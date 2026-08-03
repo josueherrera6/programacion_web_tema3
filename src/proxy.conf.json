@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://function-bun-production-74c72.up.railway.app",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

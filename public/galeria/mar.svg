@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Olas del océano llegando a una playa</title>
+  <defs>
+    <linearGradient id="agua" x2="0" y2="1">
+      <stop stop-color="#0ea5e9"/>
+      <stop offset="1" stop-color="#164e63"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="#bae6fd"/>
+  <circle cx="745" cy="105" r="58" fill="#fef08a"/>
+  <path d="M0 220h900v340H0z" fill="url(#agua)"/>
+  <path d="M0 310q120-80 240 0t240 0 240 0 180 0v72q-100-70-220 0t-240 0-240 0-200 0Z" fill="#e0f2fe" opacity=".85"/>
+  <path d="M0 430q140-70 290 0t290 0 320 0v130H0Z" fill="#f5d0a9"/>
+  <path d="M0 440q140-70 290 0t290 0 320 0" fill="none" stroke="#fff" stroke-width="20" opacity=".8"/>
+</svg>

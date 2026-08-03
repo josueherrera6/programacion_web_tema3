@@ -1,0 +1,14 @@
+- generic [ref=e2]:
+  - toolbar [ref=e4]:
+    - link "Catálogo Angular" [ref=e6] [cursor=pointer]:
+      - /url: /
+    - navigation "Navegación principal" [ref=e8]:
+      - link "Inicio" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "Productos" [ref=e14] [cursor=pointer]:
+        - /url: /productos
+      - link "Contacto" [ref=e19] [cursor=pointer]:
+        - /url: /contacto
+      - link "Galería" [ref=e24] [cursor=pointer]:
+        - /url: /galeria
+  - main [ref=e30]

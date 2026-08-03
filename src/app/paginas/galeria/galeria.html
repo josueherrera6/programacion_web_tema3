@@ -1,0 +1,102 @@
+<header class="encabezado">
+  <p>COMPONENTES INTERACTIVOS</p>
+  <h1>Galería PrimeNG</h1>
+  <span>
+    Explora las imágenes y personaliza su presentación con los controles.
+  </span>
+</header>
+
+<div class="contenido">
+  <section class="visor" aria-label="Galería de imágenes">
+    <p-galleria
+      [value]="imagenes"
+      [responsiveOptions]="opcionesResponsivas"
+      [numVisible]="4"
+      [circular]="true"
+      [showItemNavigators]="true"
+      [showThumbnails]="mostrarMiniaturas"
+      [autoPlay]="reproduccionAutomatica"
+      [transitionInterval]="intervalo"
+    >
+      <ng-template #item let-imagen>
+        <figure [class]="'imagen-principal vista-' + vista.toLowerCase()">
+          <img
+            [src]="imagen.src"
+            [alt]="imagen.alt"
+            [style.width.%]="zoom"
+          />
+          <figcaption>
+            <strong>{{ imagen.titulo }}</strong>
+            <span>{{ imagen.descripcion }}</span>
+          </figcaption>
+        </figure>
+      </ng-template>
+
+      <ng-template #thumbnail let-imagen>
+        <img
+          class="miniatura"
+          [src]="imagen.miniatura"
+          [alt]="'Miniatura: ' + imagen.alt"
+        />
+      </ng-template>
+    </p-galleria>
+  </section>
+
+  <aside aria-labelledby="titulo-controles">
+    <p-card>
+      <ng-template #title>
+        <span id="titulo-controles">Controles</span>
+      </ng-template>
+
+      <div class="control interruptor">
+        <label for="reproduccion">Reproducción automática</label>
+        <p-toggleswitch
+          inputId="reproduccion"
+          [(ngModel)]="reproduccionAutomatica"
+        />
+      </div>
+
+      <div class="control interruptor">
+        <label for="miniaturas">Mostrar miniaturas</label>
+        <p-toggleswitch
+          inputId="miniaturas"
+          [(ngModel)]="mostrarMiniaturas"
+        />
+      </div>
+
+      <div class="control">
+        <label for="intervalo">
+          Intervalo: {{ intervalo / 1000 }} segundos
+        </label>
+        <p-slider
+          id="intervalo"
+          [(ngModel)]="intervalo"
+          [min]="1000"
+          [max]="6000"
+          [step]="500"
+        />
+      </div>
+
+      <div class="control">
+        <span id="etiqueta-vista">Tamaño del marco</span>
+        <p-selectbutton
+          [options]="opcionesVista"
+          [(ngModel)]="vista"
+          ariaLabelledBy="etiqueta-vista"
+        />
+      </div>
+
+      <div class="control zoom">
+        <label for="zoom">Escala de imagen</label>
+        <p-knob
+          id="zoom"
+          [(ngModel)]="zoom"
+          [min]="50"
+          [max]="100"
+          valueTemplate="{value}%"
+          ariaLabel="Escala de la imagen"
+        />
+      </div>
+    </p-card>
+  </aside>
+</div>

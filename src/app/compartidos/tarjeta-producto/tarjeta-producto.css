@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+p-card {
+  display: block;
+  height: 100%;
+}
+
+p {
+  min-height: 3rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+a {
+  margin-top: 1rem;
+  text-decoration: none;
+}

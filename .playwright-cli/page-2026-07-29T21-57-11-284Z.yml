@@ -1,0 +1,34 @@
+- generic [ref=f2e2]:
+  - toolbar [ref=f2e4]:
+    - link "Catálogo Angular" [ref=f2e6] [cursor=pointer]:
+      - /url: /
+    - navigation "Navegación principal" [ref=f2e8]:
+      - link "Inicio" [ref=f2e9] [cursor=pointer]:
+        - /url: /
+      - link "Productos" [ref=f2e14] [cursor=pointer]:
+        - /url: /productos
+      - link "Contacto" [ref=f2e19] [cursor=pointer]:
+        - /url: /contacto
+      - link "Galería" [ref=f2e24] [cursor=pointer]:
+        - /url: /galeria
+  - main [ref=f2e30]:
+    - generic [ref=f2e31]:
+      - generic [ref=f2e32]:
+        - paragraph [ref=f2e33]: CATÁLOGO EN MYSQL
+        - heading "Administración de productos" [level=1] [ref=f2e34]
+      - generic [ref=f2e35]:
+        - button "Tarjetas" [ref=f2e37] [cursor=pointer]
+        - button "Tabla" [ref=f2e40] [cursor=pointer]
+      - generic [ref=f2e42]:
+        - textbox "Nombre" [ref=f2e43]
+        - textbox "Descripción" [ref=f2e44]
+        - spinbutton "Precio" [ref=f2e45]: "0"
+        - button "Insertar nuevo" [disabled] [ref=f2e47]
+      - table [ref=f2e54]:
+        - rowgroup [ref=f2e55]:
+          - row [ref=f2e56]:
+            - columnheader "Nombre" [ref=f2e57]
+            - columnheader "Descripción" [ref=f2e58]
+            - columnheader "Precio" [ref=f2e59]
+            - columnheader "Acciones" [ref=f2e60]
+        - rowgroup

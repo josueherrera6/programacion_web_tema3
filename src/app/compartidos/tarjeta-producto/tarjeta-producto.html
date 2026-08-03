@@ -1,0 +1,15 @@
+<p-card [header]="producto().nombre">
+  <p>{{ producto().descripcion }}</p>
+
+  <p-tag
+    severity="success"
+    [rounded]="true"
+    [value]="'$' + producto().precio.toLocaleString('es-MX')"
+  />
+
+  <ng-template #footer>
+    <a [routerLink]="['/productos', producto().id]" pButton>
+      <span pButtonLabel>Ver detalle</span>
+    </a>
+  </ng-template>
+</p-card>

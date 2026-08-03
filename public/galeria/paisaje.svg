@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Paisaje de montaña al atardecer</title>
+  <defs>
+    <linearGradient id="cielo" x2="0" y2="1">
+      <stop stop-color="#fb7185"/>
+      <stop offset="1" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#cielo)"/>
+  <circle cx="700" cy="130" r="70" fill="#fef3c7" opacity=".85"/>
+  <path d="M0 430 230 180l170 190 120-125 260 185Z" fill="#475569"/>
+  <path d="m170 245 60-65 47 52-47-20Z" fill="#f8fafc"/>
+  <path d="m475 292 45-47 53 56-52-22Z" fill="#f8fafc"/>
+  <path d="M0 420 185 330l140 65 150-35 190 65 115-42 120 57v120H0Z" fill="#1e293b"/>
+</svg>

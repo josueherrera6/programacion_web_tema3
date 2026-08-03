@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Bosque verde con árboles y colinas</title>
+  <rect width="900" height="560" fill="#bae6fd"/>
+  <circle cx="145" cy="110" r="62" fill="#fef08a"/>
+  <path d="M0 350Q200 170 410 350T900 310v250H0Z" fill="#86efac"/>
+  <path d="M0 410Q220 250 430 405T900 370v190H0Z" fill="#22c55e"/>
+  <g>
+    <path d="M130 520V300M305 540V245M525 530V285M740 540V235" stroke="#713f12" stroke-width="26"/>
+    <path d="m130 155-105 260h210Zm175-60L175 440h260Zm220 30L400 445h250Zm215-85L585 455h300Z" fill="#166534"/>
+    <path d="m130 210-75 185h150Zm175-55-95 250h190Zm220 35-85 215h170Zm215-75-105 285h210Z" fill="#15803d"/>
+  </g>
+</svg>

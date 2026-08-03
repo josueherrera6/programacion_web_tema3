@@ -1,0 +1,108 @@
+<header class="encabezado">
+  <p>CATÁLOGO EN MYSQL</p>
+  <h1>Administración de productos</h1>
+</header>
+
+<div class="selector-vista">
+  <p-button
+    label="Tarjetas"
+    [outlined]="modoVista !== 'tarjetas'"
+    (onClick)="modoVista = 'tarjetas'"
+  />
+  <p-button
+    label="Tabla"
+    [outlined]="modoVista !== 'tabla'"
+    (onClick)="modoVista = 'tabla'"
+  />
+</div>
+
+<section class="formulario-producto">
+  <input pInputText placeholder="Nombre" [(ngModel)]="formulario.nombre" />
+  <input
+    pInputText
+    placeholder="Descripción"
+    [(ngModel)]="formulario.descripcion"
+  />
+  <input
+    pInputText
+    type="number"
+    min="1"
+    placeholder="Precio"
+    [(ngModel)]="formulario.precio"
+  />
+
+  <p-button
+    [label]="productoEditandoId !== null ? 'Actualizar producto' : 'Insertar nuevo'"
+    (onClick)="guardarProducto()"
+    [disabled]="
+      !formulario.nombre.trim() ||
+      !formulario.descripcion.trim() ||
+      formulario.precio <= 0
+    "
+  />
+
+  @if (productoEditandoId !== null) {
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      [outlined]="true"
+      (onClick)="cancelarEdicion()"
+    />
+  }
+</section>
+
+@if (mensajeError) {
+  <p class="error">{{ mensajeError }}</p>
+}
+
+@if (modoVista === 'tarjetas') {
+  <section class="cuadricula">
+    @for (producto of productos; track producto.id) {
+      <app-tarjeta-producto [producto]="producto" />
+    } @empty {
+      <p>No hay productos registrados.</p>
+    }
+  </section>
+} @else {
+  <p-table [value]="productos" [loading]="cargando">
+    <ng-template #header>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-producto>
+      <tr>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.precio | currency: 'MXN' }}</td>
+        <td class="acciones">
+          <a [routerLink]="['/productos', producto.id]" pButton>
+            <span pButtonLabel>Ver</span>
+          </a>
+          <p-button
+            label="Editar"
+            severity="secondary"
+            [outlined]="true"
+            (onClick)="editarProducto(producto)"
+          />
+          <p-button
+            label="Eliminar"
+            severity="danger"
+            [outlined]="true"
+            (onClick)="eliminarProducto(producto.id)"
+          />
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="4">No hay productos registrados.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+}

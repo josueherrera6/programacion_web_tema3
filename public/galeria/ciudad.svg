@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title">
+  <title id="title">Edificios de una ciudad moderna</title>
+  <defs>
+    <linearGradient id="cielo" x2="0" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#cielo)"/>
+  <path d="M80 560V230h180v330M280 560V120h230v440M535 560V280h130v280M685 560V180h150v380" fill="#334155"/>
+  <g fill="#fef3c7">
+    <path d="M115 270h45v35h-45zm65 0h45v35h-45zm-65 65h45v35h-45zm65 0h45v35h-45z"/>
+    <path d="M325 170h55v42h-55zm80 0h55v42h-55zm-80 72h55v42h-55zm80 0h55v42h-55zm-80 72h55v42h-55zm80 0h55v42h-55z"/>
+    <path d="M570 320h30v35h-30zm35 0h30v35h-30zm115-95h38v38h-38zm45 0h38v38h-38z"/>
+  </g>
+  <path d="M0 500h900v60H0z" fill="#1e293b"/>
+</svg>
