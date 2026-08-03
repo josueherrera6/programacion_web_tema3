@@ -44,3 +44,4 @@ __screenshots__/
 Thumbs.db
 /backend/node_modules/
 /backend/.env
+.firebase/

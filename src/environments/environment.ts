@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://function-bun-production-74c72.up.railway.app'
+  apiUrl: 'https://programacionwebtema3-production.up.railway.app'
 };
