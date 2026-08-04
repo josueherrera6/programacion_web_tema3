@@ -1,0 +1,29 @@
+<h1>Categorías</h1>
+
+@if (mensajeError) {
+  <p class="error">{{ mensajeError }}</p>
+}
+
+@if (cargando) {
+  <p>Cargando categorías...</p>
+}
+
+@if (!cargando && categorias.length === 0 && !mensajeError) {
+  <p>No hay categorías disponibles.</p>
+}
+
+<div class="contenedor">
+  @for (categoria of categorias; track categoria.id) {
+    <div class="tarjeta">
+      <h2>{{ categoria.nombre }}</h2>
+      <p>{{ categoria.descripcion ?? 'Sin descripción' }}</p>
+      <a
+        [routerLink]="['/productos']"
+        [queryParams]="{ categoria_id: categoria.id }"
+        pButton
+      >
+        <span pButtonLabel>Ver productos</span>
+      </a>
+    </div>
+  }
+</div>

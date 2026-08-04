@@ -1,7 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
@@ -27,9 +27,11 @@ import { ProductosServicio } from '../../servicios/productos';
 export class Productos implements OnInit {
   private readonly servicio = inject(ProductosServicio);
   private readonly detectorCambios = inject(ChangeDetectorRef);
+  private readonly rutaActiva = inject(ActivatedRoute);
 
   productos: Producto[] = [];
   modoVista: 'tarjetas' | 'tabla' = 'tabla';
+  categoriaFiltradaId: number | null = null;
   productoEditandoId: number | null = null;
   cargando = false;
   mensajeError = '';
@@ -41,7 +43,11 @@ export class Productos implements OnInit {
   };
 
   ngOnInit(): void {
-    this.cargarProductos();
+    this.rutaActiva.queryParamMap.subscribe((params) => {
+      const categoriaId = params.get('categoria_id');
+      this.categoriaFiltradaId = categoriaId !== null ? Number(categoriaId) : null;
+      this.cargarProductos();
+    });
   }
 
   cargarProductos(): void {
@@ -51,7 +57,9 @@ export class Productos implements OnInit {
     this.servicio.obtenerProductos().subscribe({
       next: (productos) => {
         setTimeout(() => {
-          this.productos = productos;
+          this.productos = this.categoriaFiltradaId !== null
+            ? productos.filter((producto) => producto.categoria_id === this.categoriaFiltradaId)
+            : productos;
           this.cargando = false;
           this.detectorCambios.detectChanges();
         });

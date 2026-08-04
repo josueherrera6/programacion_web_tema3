@@ -1,0 +1,19 @@
+.encabezado {
+  margin-bottom: 1.5rem;
+}
+
+.lista-favoritos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.vacio {
+  color: #64748b;
+  font-style: italic;
+}

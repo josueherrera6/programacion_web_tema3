@@ -3,5 +3,14 @@ export interface Producto {
   nombre: string;
   descripcion: string;
   precio: number;
+  creado_en?: string;
+  categoria_id?: number | null;
+  categoria?: string | null;
 }
-export type NuevoProducto = Omit<Producto, 'id'>;
+
+export interface NuevoProducto {
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  categoria_id?: number | null;
+}

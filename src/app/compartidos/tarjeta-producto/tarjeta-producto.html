@@ -8,8 +8,16 @@
   />
 
   <ng-template #footer>
-    <a [routerLink]="['/productos', producto().id]" pButton>
-      <span pButtonLabel>Ver detalle</span>
-    </a>
+    <div class="acciones">
+      <a [routerLink]="['/productos', producto().id]" pButton>
+        <span pButtonLabel>Ver detalle</span>
+      </a>
+      <p-button
+        [label]="esFavorito ? '💔 Quitar favorito' : '❤️ Agregar favorito'"
+        [severity]="esFavorito ? 'secondary' : 'help'"
+        [outlined]="!esFavorito"
+        (onClick)="alternarFavorito($event)"
+      />
+    </div>
   </ng-template>
 </p-card>

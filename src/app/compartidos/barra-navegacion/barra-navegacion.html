@@ -1,16 +1,25 @@
 <p-toolbar>
+
   <ng-template #start>
-    <a class="marca" routerLink="/">Catálogo Angular</a>
+    <a class="marca" routerLink="/">
+      Catálogo Angular
+    </a>
   </ng-template>
 
+
   <ng-template #end>
+
     <nav aria-label="Navegación principal">
+
+
+      <!-- Inicio -->
       <a
         routerLink="/"
         routerLinkActive="activo"
         [routerLinkActiveOptions]="{ exact: true }"
         pButton
       >
+
         <svg
           class="icono-navegacion"
           viewBox="0 0 24 24"
@@ -19,10 +28,22 @@
           <path d="M3 10.5 12 3l9 7.5" />
           <path d="M5 9.5V21h14V9.5M9 21v-7h6v7" />
         </svg>
-        <span pButtonLabel>Inicio</span>
+
+        <span pButtonLabel>
+          Inicio
+        </span>
+
       </a>
 
-      <a routerLink="/productos" routerLinkActive="activo" pButton>
+
+
+      <!-- Productos -->
+      <a
+        routerLink="/productos"
+        routerLinkActive="activo"
+        pButton
+      >
+
         <svg
           class="icono-navegacion"
           viewBox="0 0 24 24"
@@ -31,10 +52,73 @@
           <path d="m12 3 9 5-9 5-9-5 9-5Z" />
           <path d="m3 12 9 5 9-5M3 16l9 5 9-5" />
         </svg>
-        <span pButtonLabel>Productos</span>
+
+        <span pButtonLabel>
+          Productos
+        </span>
+
       </a>
 
-      <a routerLink="/contacto" routerLinkActive="activo" pButton>
+
+
+      <!-- Categorías -->
+      <a
+        routerLink="/categorias"
+        routerLinkActive="activo"
+        pButton
+      >
+
+        <svg
+          class="icono-navegacion"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M4 5h6l2 3h8v11H4z"/>
+          <path d="M4 8h16"/>
+        </svg>
+
+
+        <span pButtonLabel>
+          Categorías
+        </span>
+
+      </a>
+
+
+
+
+      <!-- Favoritos -->
+      <a
+        routerLink="/favoritos"
+        routerLinkActive="activo"
+        pButton
+      >
+
+        <svg
+          class="icono-navegacion"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M12 21s-8-4.5-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 11c0 5.5-8 10-8 10Z"/>
+        </svg>
+
+
+        <span pButtonLabel>
+          Favoritos
+        </span>
+
+      </a>
+
+
+
+
+      <!-- Contacto -->
+      <a
+        routerLink="/contacto"
+        routerLinkActive="activo"
+        pButton
+      >
+
         <svg
           class="icono-navegacion"
           viewBox="0 0 24 24"
@@ -43,10 +127,23 @@
           <path d="M4 5h16v14H4z" />
           <path d="m4 7 8 6 8-6" />
         </svg>
-        <span pButtonLabel>Contacto</span>
+
+        <span pButtonLabel>
+          Contacto
+        </span>
+
       </a>
 
-      <a routerLink="/galeria" routerLinkActive="activo" pButton>
+
+
+
+      <!-- Galería -->
+      <a
+        routerLink="/galeria"
+        routerLinkActive="activo"
+        pButton
+      >
+
         <svg
           class="icono-navegacion"
           viewBox="0 0 24 24"
@@ -56,8 +153,17 @@
           <circle cx="8.5" cy="9" r="1.5" />
           <path d="m4 17 5-5 3.5 3.5 2-2L20 19" />
         </svg>
-        <span pButtonLabel>Galería</span>
+
+        <span pButtonLabel>
+          Galería
+        </span>
+
       </a>
+
+
     </nav>
+
   </ng-template>
+
+
 </p-toolbar>

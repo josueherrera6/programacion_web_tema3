@@ -1,0 +1,31 @@
+<header class="encabezado">
+  <h1>Favoritos</h1>
+  <p>Productos guardados para ver más tarde.</p>
+</header>
+
+@if (mensajeError) {
+  <p class="error">{{ mensajeError }}</p>
+}
+
+@if (cargando) {
+  <p>Cargando favoritos...</p>
+}
+
+@if (!cargando && favoritos.length === 0 && !mensajeError) {
+  <p class="vacio">No existen favoritos.</p>
+}
+
+<div class="lista-favoritos">
+  @for (producto of favoritos; track producto.id) {
+    <p-card [header]="producto.nombre">
+      <p>{{ producto.descripcion }}</p>
+      <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+      <p><strong>Categoría:</strong> {{ producto.categoria_id ?? 'Sin categoría' }}</p>
+      <ng-template #footer>
+        <a [routerLink]="['/productos', producto.id]" pButton>
+          <span pButtonLabel>Ver detalle</span>
+        </a>
+      </ng-template>
+    </p-card>
+  }
+</div>
